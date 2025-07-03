@@ -1,6 +1,8 @@
 package com.github.pjm03.configmessage;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.entity.Player;
 
 public class ConfigMessageUtil {
     public static boolean nullCheck(Object... o) {
@@ -10,7 +12,9 @@ public class ConfigMessageUtil {
         return false;
     }
 
-    public static String colorString(String string) {
-        return string == null ? null : ChatColor.translateAlternateColorCodes('&', string);
+    public static String prepareMessage(Player p, String string) {
+        if (string == null) return null;
+        string = ChatColor.translateAlternateColorCodes('&', string);
+        return PlaceholderAPI.setPlaceholders(p, string);
     }
 }
