@@ -1,0 +1,15 @@
+message:
+  chat:
+    type: 'chat'
+    message:
+      - "Hello"
+      - "Hi"
+  actionbar:
+    type: 'actionbar'
+    message: "Hello World"
+  title:
+    title: "Hello"
+    subtitle: "World"
+    fade-in: 5
+    stay: 10
+    fade-out: 5
