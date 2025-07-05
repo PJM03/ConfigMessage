@@ -1,19 +1,20 @@
-package com.github.pjm03.configmessage.config;
+package com.github.pjm03.configmessage.config.yaml;
 
+import com.github.pjm03.configmessage.config.Config;
+import com.github.pjm03.configmessage.config.Message;
 import com.github.pjm03.configmessage.message.ActionBar;
 import com.github.pjm03.configmessage.message.Chat;
 import com.github.pjm03.configmessage.message.Title;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.plugin.Plugin;
 
 @RequiredArgsConstructor
-public class PluginConfig implements Config {
-    private final Plugin plugin;
+public abstract class AbstractYamlConfig implements Config {
     private final String path;
 
+    @Override
     public Message parseMessage(String key) {
-        ConfigurationSection section = plugin.getConfig().getConfigurationSection(this.path);
+        ConfigurationSection section = getConfigurationSection(this.path);
         if (section == null) throw new IllegalArgumentException("'" + this.path + "' does not exist");
         if (!section.isSet(key)) throw new IllegalArgumentException("'" + key + "' does not exist");
 
@@ -35,8 +36,5 @@ public class PluginConfig implements Config {
         };
     }
 
-    @Override
-    public void reload() {
-        plugin.reloadConfig();
-    }
+    protected abstract ConfigurationSection getConfigurationSection(String path);
 }
