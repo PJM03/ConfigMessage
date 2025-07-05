@@ -1,0 +1,23 @@
+{
+  "message": {
+    "chat": {
+      "type": "chat",
+      "message": [
+        "Hello",
+        "World"
+      ]
+    },
+    "actionbar": {
+      "type": "chat",
+      "message": "Hello"
+    },
+    "title": {
+      "type": "title",
+      "title": "Hello",
+      "subtitle": "World",
+      "fade-in": 5,
+      "stay": 10,
+      "fade-out": 5
+    }
+  }
+}
