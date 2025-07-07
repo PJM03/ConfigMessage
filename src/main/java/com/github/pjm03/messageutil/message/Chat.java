@@ -1,6 +1,6 @@
-package com.github.pjm03.configmessage.message;
+package com.github.pjm03.messageutil.message;
 
-import com.github.pjm03.configmessage.ConfigMessageUtil;
+import com.github.pjm03.messageutil.Utility;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 
@@ -15,7 +15,7 @@ public class Chat implements AbstractMessage {
         if (message.isEmpty()) throw new IllegalArgumentException("Message cannot be null");
 
         message.stream()
-                .map(line -> ConfigMessageUtil.prepareMessage(p, line))
+                .map(line -> Utility.prepareMessage(p, line))
                 .forEach(p::sendMessage);
     }
 }

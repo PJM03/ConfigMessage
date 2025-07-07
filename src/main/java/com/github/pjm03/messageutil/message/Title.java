@@ -1,6 +1,6 @@
-package com.github.pjm03.configmessage.message;
+package com.github.pjm03.messageutil.message;
 
-import com.github.pjm03.configmessage.ConfigMessageUtil;
+import com.github.pjm03.messageutil.Utility;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 
@@ -14,10 +14,10 @@ public class Title implements AbstractMessage {
 
     @Override
     public void send(Player p) {
-        String title = ConfigMessageUtil.prepareMessage(p, this.title);
-        String subtitle = ConfigMessageUtil.prepareMessage(p, this.subtitle);
+        String title = Utility.prepareMessage(p, this.title);
+        String subtitle = Utility.prepareMessage(p, this.subtitle);
 
-        if(ConfigMessageUtil.nullCheck(title, subtitle)) {
+        if(Utility.nullCheck(title, subtitle)) {
             throw new IllegalArgumentException("[title, subtitle, fadeIn, stay, fadeOut] cannot be null. Please check config file");
         }
 

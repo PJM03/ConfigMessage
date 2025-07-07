@@ -1,4 +1,4 @@
-package com.github.pjm03.configmessage.config.yaml;
+package com.github.pjm03.messageutil.config.yaml;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;

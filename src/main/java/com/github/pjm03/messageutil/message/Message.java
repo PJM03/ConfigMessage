@@ -1,6 +1,5 @@
-package com.github.pjm03.configmessage.config;
+package com.github.pjm03.messageutil.message;
 
-import com.github.pjm03.configmessage.message.AbstractMessage;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 

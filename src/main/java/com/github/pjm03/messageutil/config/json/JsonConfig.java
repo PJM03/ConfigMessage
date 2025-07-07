@@ -1,10 +1,10 @@
-package com.github.pjm03.configmessage.config.json;
+package com.github.pjm03.messageutil.config.json;
 
-import com.github.pjm03.configmessage.config.Config;
-import com.github.pjm03.configmessage.config.Message;
-import com.github.pjm03.configmessage.message.ActionBar;
-import com.github.pjm03.configmessage.message.Chat;
-import com.github.pjm03.configmessage.message.Title;
+import com.github.pjm03.messageutil.config.Config;
+import com.github.pjm03.messageutil.message.Message;
+import com.github.pjm03.messageutil.message.ActionBar;
+import com.github.pjm03.messageutil.message.Chat;
+import com.github.pjm03.messageutil.message.Title;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
