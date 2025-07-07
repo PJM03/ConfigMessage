@@ -5,14 +5,15 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.IOException;
 
 public class YamlConfig extends AbstractYamlConfig {
     private final File file;
 
     private FileConfiguration config;
 
-    public YamlConfig(File file, String path) {
-        super(path);
+    public YamlConfig(File file, String messagePath, String chainPath) throws IOException {
+        super(messagePath, chainPath);
         this.file = file;
 
         this.config = YamlConfiguration.loadConfiguration(file);

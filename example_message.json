@@ -18,6 +18,45 @@
       "fade-in": 5,
       "stay": 10,
       "fade-out": 5
+    },
+    "chain-example-1": {
+      "type": "chat",
+      "message": [
+        "Hello!"
+      ]
+    },
+    "chain-example-2": {
+      "type": "chat",
+      "message": [
+        "My name is Example!"
+      ]
+    },
+    "chain-example-3": {
+      "type": "title",
+      "title": "Hello",
+      "subtitle": "This is title",
+      "fade-in": 5,
+      "stay": 10,
+      "fade-out": 5
+    }
+  },
+  "message-chain": {
+    "chain-example": {
+      "repeat": false,
+      "messages": [
+        {
+          "name": "chain-example-1",
+          "delay": 0
+        },
+        {
+          "name": "chain-example-2",
+          "delay": 20
+        },
+        {
+          "name": "chain-example-3",
+          "delay": 20
+        }
+      ]
     }
   }
 }

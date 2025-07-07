@@ -1,16 +1,47 @@
 message:
-  chat:
+  chat-example:
     type: 'chat'
     message:
       - "Hello"
       - "Hi"
-  actionbar:
+      -
+  actionbar-example:
     type: 'actionbar'
     message: "Hello World"
-  title:
+
+  title-example:
     type: "title"
     title: "Hello"
     subtitle: "World"
+    fade-in: 5 #tick
+    stay: 10 #tick
+    fade-out: 5 #tick
+
+  chain-example-1:
+    type: 'chat'
+    message:
+      - 'Hello!'
+
+  chain-example-2:
+    type: 'chat'
+    message:
+      - 'My name is Example!'
+
+  chain-example-3:
+    type: 'title'
+    title: 'Hello'
+    subtitle: 'This is title'
     fade-in: 5
     stay: 10
     fade-out: 5
+
+message-chain:
+  chain-example:
+    repeat: false
+    messages:
+      - name: 'chain-example-1'
+        delay: 0 #tick
+      - name: 'chain-example-2'
+        delay: 20
+      - name: 'chain-example-3'
+        delay: 20

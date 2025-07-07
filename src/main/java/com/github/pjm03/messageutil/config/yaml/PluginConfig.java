@@ -3,11 +3,13 @@ package com.github.pjm03.messageutil.config.yaml;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
 
+import java.io.IOException;
+
 public class PluginConfig extends AbstractYamlConfig {
     private final Plugin plugin;
 
-    public PluginConfig(Plugin plugin, String path) {
-        super(path);
+    public PluginConfig(Plugin plugin, String messagePath, String chainPath) throws IOException {
+        super(messagePath, chainPath);
         this.plugin = plugin;
     }
 
