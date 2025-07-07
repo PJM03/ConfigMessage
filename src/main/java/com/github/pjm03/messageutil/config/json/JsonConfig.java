@@ -1,7 +1,7 @@
 package com.github.pjm03.messageutil.config.json;
 
 import com.github.pjm03.messageutil.config.Config;
-import com.github.pjm03.messageutil.message.Message;
+import com.github.pjm03.messageutil.message.ConfigMessage;
 import com.github.pjm03.messageutil.message.ActionBar;
 import com.github.pjm03.messageutil.message.Chat;
 import com.github.pjm03.messageutil.message.Title;
@@ -32,7 +32,7 @@ public class JsonConfig implements Config {
     }
 
     @Override
-    public Message parseMessage(String key) {
+    public ConfigMessage parseMessage(String key) {
         JsonObject messageSection = getValue(this.path, json::getAsJsonObject, p -> "path '" + p + "' does not exist");
 
         JsonObject message = getValue(key, messageSection::getAsJsonObject, k -> "message '" + k + "' does not exist");
@@ -42,7 +42,7 @@ public class JsonConfig implements Config {
 
         switch (type.toUpperCase()) {
             case "CHAT" -> {
-                return new Message(() -> new Chat(
+                return new ConfigMessage(() -> new Chat(
                         getValue("message", message::getAsJsonArray, k -> "required key '" + k + "' does not exist in message block")
                                 .asList().stream()
                                 .map(JsonElement::getAsString)
@@ -50,14 +50,14 @@ public class JsonConfig implements Config {
                 ));
             }
             case "ACTIONBAR" -> {
-                return new Message(() -> new ActionBar(
+                return new ConfigMessage(() -> new ActionBar(
                         getValue("message", message::get, k -> "required key '" + k + "' does not exist in message block")
                                 .getAsString()));
             }
 
             case "TITLE" -> {
                 Function<String, String> emc = k -> "required key '" + k + "' does not exist in message block";
-                return new Message(() -> new Title(
+                return new ConfigMessage(() -> new Title(
                         getValue("title", message::get, emc).getAsString(),
                         getValue("subtitle", message::get, emc).getAsString(),
                         getValue("fade-in", message::get, emc).getAsInt(),
@@ -72,11 +72,9 @@ public class JsonConfig implements Config {
     }
 
     @Override
-    public void reload() {
+    public void reload() throws IOException {
         try(Reader reader = Files.newBufferedReader(file.toPath())) {
             this.json = gson.fromJson(reader, JsonObject.class);
-        }  catch (IOException ex) {
-            throw new RuntimeException(ex);
         }
     }
 

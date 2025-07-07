@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import java.util.function.Supplier;
 
 @RequiredArgsConstructor
-public class Message {
+public class ConfigMessage implements AbstractMessage {
     private final Supplier<? extends AbstractMessage> supplier;
 
     public void send(Player p) {
