@@ -17,6 +17,12 @@ message:
     stay: 10 #tick
     fade-out: 5 #tick
 
+  bossbar:
+    type: "bossbar"
+    title: "Hello World"
+    color: "BLUE" #BLUE, RED, GREEN, YELLOW, PURPLE, WHITE, PINK
+    style: "SOLID" #SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+    mode: ""
   chain-example-1:
     type: 'chat'
     message:

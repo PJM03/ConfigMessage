@@ -1,4 +1,4 @@
-package com.github.pjm03.messageutil.message.chain.scheduler;
+package com.github.pjm03.messageutil.message.scheduler;
 
 import com.github.pjm03.messageutil.message.chain.MessageChain;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 @RequiredArgsConstructor
-public class BukkitChainScheduler implements AbstractChainScheduler<BukkitTask> {
+public class BukkitMessageScheduler implements AbstractMessageScheduler<BukkitTask> {
     private final Plugin plugin;
 
     @Override
@@ -33,7 +33,6 @@ public class BukkitChainScheduler implements AbstractChainScheduler<BukkitTask> 
 
             MessageChain.Message message = this.chain.messages().get(this.index);
             message.message().send(this.p);
-            System.out.println("send! = " + message.message());
             this.runTaskLater(this.plugin, message.delay());
         }
     }
