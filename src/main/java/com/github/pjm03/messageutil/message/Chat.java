@@ -2,11 +2,13 @@ package com.github.pjm03.messageutil.message;
 
 import com.github.pjm03.messageutil.Utility;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 
 @RequiredArgsConstructor
+@ToString
 public class Chat implements AbstractMessage {
     private final List<String> message;
 

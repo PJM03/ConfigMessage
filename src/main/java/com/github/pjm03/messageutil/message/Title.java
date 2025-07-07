@@ -2,9 +2,11 @@ package com.github.pjm03.messageutil.message;
 
 import com.github.pjm03.messageutil.Utility;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor
+@ToString
 public class Title implements AbstractMessage {
     private final String title;
     private final String subtitle;

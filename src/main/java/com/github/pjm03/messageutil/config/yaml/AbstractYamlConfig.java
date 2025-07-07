@@ -41,9 +41,9 @@ public abstract class AbstractYamlConfig implements Config {
             case "TITLE" -> new ConfigMessage(() -> new Title(
                     section.getString(key + ".title"),
                     section.getString(key + ".subtitle"),
-                    section.getInt(key + "fade-in"),
-                    section.getInt(key + "stay"),
-                    section.getInt(key + "fade-out")
+                    section.getInt(key + ".fade-in"),
+                    section.getInt(key + ".stay"),
+                    section.getInt(key + ".fade-out")
             ));
 
             default -> throw new IllegalArgumentException("type '" + type + "' is unsupported.");

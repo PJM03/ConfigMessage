@@ -2,11 +2,13 @@ package com.github.pjm03.messageutil.message;
 
 import com.github.pjm03.messageutil.Utility;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor
+@ToString
 public class ActionBar implements AbstractMessage {
     private final String message;
 

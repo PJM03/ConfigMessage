@@ -1,15 +1,15 @@
 message:
-  chat-example:
+  chat:
     type: 'chat'
     message:
       - "Hello"
       - "Hi"
       -
-  actionbar-example:
+  actionbar:
     type: 'actionbar'
     message: "Hello World"
 
-  title-example:
+  title:
     type: "title"
     title: "Hello"
     subtitle: "World"

@@ -8,7 +8,7 @@
       ]
     },
     "actionbar": {
-      "type": "chat",
+      "type": "actionbar",
       "message": "Hello"
     },
     "title": {
